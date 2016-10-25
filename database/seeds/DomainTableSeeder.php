@@ -13,7 +13,7 @@ class DomainTableSeeder extends Seeder
     {
         for($i=1;$i<50;$i++){
             DB::table('domain')->insert([
-            'domain' => str_random(10).'.com',
+            'domain' => 'ixiqin'.str_random(2).'.com',
             'time' => str_random(10),
             'status' => str_random(10),
             ]);
