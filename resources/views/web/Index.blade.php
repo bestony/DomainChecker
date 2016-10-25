@@ -11,7 +11,8 @@
             <th>#</th>
             <th>域名</th>
             <th>状态</th>
-            <th>域名时间</th>
+            <th>创建时间</th>
+            <th>更新时间</th>
         </tr>
     </thead>
 
@@ -28,7 +29,8 @@
                 <td>{{ $dm->id }}</td>
                 <td>{{ $dm->domain }}</td>
                 <td>{{ $dm->status }}</td>
-                <td>{{ $dm->time }}</td>
+                <td>{{ $dm->created_at }}</td>
+                <td>{{ $dm->updated_at }}</td>
             </tr>
         @endforeach
     @endif

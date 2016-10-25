@@ -21,7 +21,6 @@ class IndexController extends Controller
    public function save(Request $request){
        $dm = new Domain;
        $dm->domain = $request->domain;
-       $dm->time = time();
        $dm->status  = '未监测';
        $dm->save();
        return view('web.Success');

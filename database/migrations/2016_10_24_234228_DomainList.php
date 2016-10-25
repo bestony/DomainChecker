@@ -17,7 +17,6 @@ class DomainList extends Migration
         Schema::create('domain', function (Blueprint $table) {
             $table->increments('id');
             $table->string('domain');
-            $table->string('time');
             $table->string('status');
             $table->timestamps();
         });
