@@ -16,14 +16,22 @@
     </thead>
 
     <tbody>
-    @foreach ($data as $dm)
+    
+   
+    @if (count($data) < 1)
         <tr>
-            <td>{{ $dm->id }}</td>
-            <td>{{ $dm->domain }}</td>
-            <td>{{ $dm->status }}</td>
-            <td>{{ $dm->time }}</td>
+            <td colspan=4>没有域名</td>
         </tr>
-    @endforeach
+    @else
+        @foreach ($data as $dm)
+            <tr>
+                <td>{{ $dm->id }}</td>
+                <td>{{ $dm->domain }}</td>
+                <td>{{ $dm->status }}</td>
+                <td>{{ $dm->time }}</td>
+            </tr>
+        @endforeach
+    @endif
     </tbody>
 </table>      
 
