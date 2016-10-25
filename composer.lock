@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ca8c5542d599fec53fcbf2ebea612655",
-    "content-hash": "567da3b9d0a09b63a3973b7dc246a69c",
+    "hash": "0269810ac64ba9f12e67c2f92a6e9652",
+    "content-hash": "14b62934dd9fe20be2b7f6c0f7b1a7c7",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -838,6 +838,48 @@
                 "random"
             ],
             "time": "2016-10-17 15:23:22"
+        },
+        {
+            "name": "phois/whois",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/regru/php-whois.git",
+                "reference": "1b321ec3551ac54cc790f8a5d7945ff5bc8a916c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://packagist.phpcomposer.com/files/regru/php-whois/1b321ec3551ac54cc790f8a5d7945ff5bc8a916c.zip",
+                "reference": "1b321ec3551ac54cc790f8a5d7945ff5bc8a916c",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": ">=5.3.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Phois\\Whois": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "David Rivera",
+                    "email": "David.R.Rivera193@gmail.com",
+                    "homepage": "http://www.protodx.com",
+                    "role": "Systems Developer"
+                }
+            ],
+            "description": "Whois client.",
+            "keywords": [
+                "whois"
+            ],
+            "time": "2016-06-16 06:23:22"
         },
         {
             "name": "psr/log",
@@ -3531,7 +3573,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "rainwsy/aliyundm": 20
+        "rainwsy/aliyundm": 20,
+        "phois/whois": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
