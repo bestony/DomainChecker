@@ -9,33 +9,21 @@
     <thead>
         <tr>
             <th>#</th>
-            <th>Make</th>
-            <th>Model</th>
-            <th>Year</th>
+            <th>域名</th>
+            <th>状态</th>
+            <th>域名时间</th>
         </tr>
     </thead>
 
     <tbody>
+    @foreach ($data as $dm)
         <tr>
-            <td>1</td>
-            <td>Honda</td>
-            <td>Accord</td>
-            <td>2009</td>
+            <td>{{ $dm->id }}</td>
+            <td>{{ $dm->domain }}</td>
+            <td>{{ $dm->status }}</td>
+            <td>{{ $dm->time }}</td>
         </tr>
-
-        <tr>
-            <td>2</td>
-            <td>Toyota</td>
-            <td>Camry</td>
-            <td>2012</td>
-        </tr>
-
-        <tr>
-            <td>3</td>
-            <td>Hyundai</td>
-            <td>Elantra</td>
-            <td>2010</td>
-        </tr>
+    @endforeach
     </tbody>
 </table>      
 

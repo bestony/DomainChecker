@@ -10,7 +10,9 @@ use App\Domain;
 class IndexController extends Controller
 {
    public function index(){
-       return view('web.index');
+       $dm= new Domain;
+       $data = $dm->all();
+       return view('web.index',['data'=>$data]);
        
    }
 }
