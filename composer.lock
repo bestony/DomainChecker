@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9d7cf74191936c4e69c799168e48e156",
-    "content-hash": "4aba34cd69646e8856ef9aa6e4d655c5",
+    "hash": "ca8c5542d599fec53fcbf2ebea612655",
+    "content-hash": "567da3b9d0a09b63a3973b7dc246a69c",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -957,6 +957,42 @@
                 "shell"
             ],
             "time": "2016-03-09 05:03:14"
+        },
+        {
+            "name": "rainwsy/aliyundm",
+            "version": "dev-stable",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rainwsy/aliyundm.git",
+                "reference": "6648abfa1f5e589a8a466dce72bfcf3c15641a5c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://packagist.phpcomposer.com/files/rainwsy/aliyundm/6648abfa1f5e589a8a466dce72bfcf3c15641a5c.zip",
+                "reference": "6648abfa1f5e589a8a466dce72bfcf3c15641a5c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5"
+            },
+            "type": "package",
+            "autoload": {
+                "psr-4": {
+                    "Rainwsy\\Aliyunmail\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "rainwsy53",
+                    "email": "rain53@vip.qq.com"
+                }
+            ],
+            "description": "a aliyun mail push package",
+            "time": "2016-08-04 07:31:57"
         },
         {
             "name": "ramsey/uuid",
@@ -3494,7 +3530,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "rainwsy/aliyundm": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
