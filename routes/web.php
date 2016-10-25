@@ -14,3 +14,4 @@
 Route::get('/', 'IndexController@index');
 Route::get('/request', 'IndexController@request');
 Route::post('/request','IndexController@save');
+Route::get('/check', 'IndexController@check');
