@@ -43,7 +43,7 @@
         <nav class="nav">
           <ul class="nav-list">
             <li class="nav-item">
-              <a class="pure-button" href="https://github.com/bestony/DomainChecker">Github</a>
+              <a class="pure-button" href="/">首页</a>
             </li>
             <li class="nav-item">
               <a class="pure-button" href="/request">新增域名</a>
