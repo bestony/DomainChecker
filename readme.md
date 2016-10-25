@@ -1,27 +1,39 @@
-# Laravel PHP Framework
+# Domain Checker 域名监测系统
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+系统功能：对域名进行监控，一旦监测到域名可注册会向指定邮箱发送邮件提醒。
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+## Require
+    PHP >= 5.6.4
+    OpenSSL PHP Extension
+    PDO PHP Extension
+    Mbstring PHP Extension
+    Tokenizer PHP Extension
+    XML PHP Extension
+## Install 
+```bash
+git clone https://github.com/bestony/DomainChecker.git
+cd DomainChecker 
+composer update 
+cp .env.example .env
+php artisan key:generate
+php artisan migrate
+```
+修改.env的配置项
+```
+DB_HOST=数据库IP，默认localhost或127.0.0.1
+DB_PORT=数据库端口，默认3306
+DB_DATABASE=数据库名
+DB_USERNAME=用户名
+DB_PASSWORD=密码
+DM_AK=填写阿里云的Access Key ID
+DM_SK=填写阿里云的Access Key Secret	
+DM_SENDER=填写阿里云的发信地址
+DM_SENDER_NAME=填写发信人姓名，限制英文，不得有空格
+OWNERMAIL=填写接受邮件提醒的邮箱
+```
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+## 监控设置
+在[阿里云监控](https://cms.console.aliyun.com/#/sites/)中新建一个站点监控,配置如下，
 
-## Official Documentation
-
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+其中监控频率就是你的域名监控频率，建议单点监控，15分钟。以免影响主机性能
+![sp161026_025157.png](https://ooo.0o0.ooo/2016/10/25/580fa9f3a9358.png)
