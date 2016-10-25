@@ -12,7 +12,18 @@ class IndexController extends Controller
    public function index(){
        $dm= new Domain;
        $data = $dm->all();
-       return view('web.index',['data'=>$data]);
+       return view('web.Index',['data'=>$data]);
        
+   }
+   public function request(){
+       return view('web.Request');
+   }
+   public function save(Request $request){
+       $dm = new Domain;
+       $dm->domain = $request->domain;
+       $dm->time = time();
+       $dm->status  = '未监测';
+       $dm->save();
+       return view('web.Success');
    }
 }
