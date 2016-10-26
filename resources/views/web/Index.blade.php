@@ -21,7 +21,7 @@
    
     @if (count($data) < 1)
         <tr>
-            <td colspan=4>没有域名</td>
+            <td colspan=5>没有域名</td>
         </tr>
     @else
         @foreach ($data as $dm)
