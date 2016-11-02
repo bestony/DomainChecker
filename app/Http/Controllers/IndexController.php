@@ -39,13 +39,19 @@ class IndexController extends Controller
         return view('web.Success');
     }
     public function check(){
+        Log::info('Load Check Page');
         $domain = new Domain;
         $data=$domain->all();
         foreach ($data as $dm){
             if($this->getDomain($dm->domain) == '0'){
+                
                 $update = \App\Domain::find($dm->id);
                 $update->status ='监测中,等待过期';
+                $update->updated_at = time();
                 $update->save();
+                
+                Log::info('Update DataBase for '.$dm->domain);
+                
             }else{
                 $this->SendMail($dm->domain);
             }
@@ -80,6 +86,8 @@ class IndexController extends Controller
     // @return boolean 
     private function getDomain($domain){
         
+        Log::info('CheckDomain :'.$domain);
+
         $domain = new \Phois\Whois\Whois($domain);
         
         if ($domain->isAvailable()) {
